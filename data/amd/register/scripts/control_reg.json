@@ -1,0 +1,62 @@
+{
+    "CR0.PE": {
+        "name": "CR0.PE",
+        "page": 510,
+        "manual": "../manuals/24594.pdf"
+    },
+    "CR4.VM": {
+        "name": "CR4.VM",
+        "page": 614,
+        "manual": "../manuals/24594.pdf"
+    },
+    "CR4.OS": {
+        "name": "CR4.OS",
+        "page": 278,
+        "manual": "../manuals/24594.pdf"
+    },
+    "CR4.TS": {
+        "name": "CR4.TS",
+        "page": 464,
+        "manual": "../manuals/24594.pdf"
+    },
+    "CR4.PV": {
+        "name": "CR4.PV",
+        "page": 482,
+        "manual": "../manuals/24594.pdf"
+    },
+    "CR4.PC": {
+        "name": "CR4.PC",
+        "page": 460,
+        "manual": "../manuals/24594.pdf"
+    },
+    "CR0.PG": {
+        "name": "CR0.PG",
+        "page": 472,
+        "manual": "../manuals/24594.pdf"
+    },
+    "CR4.DE": {
+        "name": "CR4.DE",
+        "page": 447,
+        "manual": "../manuals/24594.pdf"
+    },
+    "CR4.PK": {
+        "name": "CR4.PK",
+        "page": 617,
+        "manual": "../manuals/24594.pdf"
+    },
+    "CR4.PG": {
+        "name": "CR4.PG",
+        "page": 634,
+        "manual": "../manuals/24594.pdf"
+    },
+    "CR4.PA": {
+        "name": "CR4.PA",
+        "page": 68,
+        "manual": "../manuals/24593.pdf"
+    },
+    "CR0.NE": {
+        "name": "CR0.NE",
+        "page": 371,
+        "manual": "../manuals/24592.pdf"
+    }
+}
