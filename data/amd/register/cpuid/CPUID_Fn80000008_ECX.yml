@@ -1,5 +1,5 @@
 - name: CPUID_Fn80000008_ECX
-  long_name: "Extended Feature Extensions ID EBX"
+  long_name: "Size Identifiers"
   purpose: |
     "
     CPUID_Fn80000008_ECX [Size Identifiers] (Core::X86::Cpuid::SizeId)
@@ -14,8 +14,8 @@
   
   access_mechanisms:
       - name: cpuid
-        function: ebx
-        output: ebx
+        function: ecx
+        output: ecx
 
   fieldsets:
       - name: latest

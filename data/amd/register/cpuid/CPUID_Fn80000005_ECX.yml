@@ -1,5 +1,5 @@
 - name: CPUID_Fn80000005_ECX
-  long_name: "L1 TLB 2M/4M Identifiers"
+  long_name: "L1 Data Cache Identifiers"
   purpose: |
     "
     CPUID_Fn80000005_ECX [L1 Data Cache Identifiers] (Core::X86::Cpuid::L1DcId)

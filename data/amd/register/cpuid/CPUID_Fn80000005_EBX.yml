@@ -1,5 +1,5 @@
 - name: CPUID_Fn80000005_EBX
-  long_name: "L1 TLB 2M/4M Identifiers"
+  long_name: "L1 TLB 4K Identifiers"
   purpose: |
     "
     CPUID_Fn80000005_EBX [L1 TLB 4K Identifiers] (Core::X86::Cpuid::L1Tlb4K)

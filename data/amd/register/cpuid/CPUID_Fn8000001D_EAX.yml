@@ -1,5 +1,5 @@
 - name: CPUID_Fn8000001D_EAX
-  long_name: "Instruction Based Sampling Identifiers"
+  long_name: "Cache Properties"
   purpose: |
     "
     CPUID_Fn8000001D_EAX_x00 [Cache Properties (DC)] (Core::X86::Cpuid::CachePropEax0)

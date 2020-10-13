@@ -14,8 +14,8 @@
   
   access_mechanisms:
       - name: cpuid
-        function: ecx
-        output: ecx
+        function: edx
+        output: edx
 
 
   fieldsets:

@@ -104,7 +104,7 @@
                   "
 
       - name: index_2
-        condition: "Fieldset valid on index_2 of CPUID_Fn8000001D_EAX of the AMD architecture"
+        condition: "Fieldset valid on index_2 of CPUID_Fn8000001D_EBX of the AMD architecture"
         size: 32
 
         fields:
@@ -139,7 +139,7 @@
                   "
 
       - name: index_3
-        condition: "Fieldset valid on index_3 of CPUID_Fn8000001D_EAX of the AMD architecture"
+        condition: "Fieldset valid on index_3 of CPUID_Fn8000001D_EBX of the AMD architecture"
         size: 32
 
         fields:
@@ -174,7 +174,7 @@
                   "
 
       - name: index_4
-        condition: "Fieldset valid on index_4 of CPUID_Fn8000001D_EAX of the AMD architecture"
+        condition: "Fieldset valid on index_4 of CPUID_Fn8000001D_EBX of the AMD architecture"
         size: 32
 
         fields:

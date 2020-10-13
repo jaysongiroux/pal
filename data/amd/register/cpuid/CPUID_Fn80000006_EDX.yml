@@ -1,5 +1,5 @@
 - name: CPUID_Fn80000006_EDX
-  long_name: "L2 Cache Identifiers"
+  long_name: "L3 Cache Identifiers"
   purpose: |
     "
     CPUID_Fn80000006_EDX [L3 Cache Identifiers] (Core::X86::Cpuid::L3CacheId)
