@@ -143,7 +143,7 @@
         size: 32
 
         fields:
-             - name: CacheLineSize
+            - name: CacheLineSize
               long_name: cache line size in bytes
               lsb: 0
               msb: 11

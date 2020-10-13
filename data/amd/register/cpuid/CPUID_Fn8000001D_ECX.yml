@@ -82,7 +82,7 @@
         size: 32
 
         fields:
-             - name: CacheNumSets
+            - name: CacheNumSets
               long_name: cache number of sets
               lsb: 0
               msb: 31

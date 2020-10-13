@@ -33,7 +33,7 @@
 
   fieldsets:
       - name: index_0
-        condition: "Fieldset valid on index_0 of CPUID_Fn8000001D_ECX of the AMD architecture"
+        condition: "Fieldset valid on index_0 of CPUID_Fn8000001D_EDX of the AMD architecture"
         size: 32
 
         fields:
@@ -61,7 +61,7 @@
                   "
 
       - name: index_1
-        condition: "Fieldset valid on index_1 of CPUID_Fn8000001D_ECX of the AMD architecture"
+        condition: "Fieldset valid on index_1 of CPUID_Fn8000001D_EDX of the AMD architecture"
         size: 32
 
         fields:
@@ -89,7 +89,7 @@
                   "
 
       - name: index_2
-        condition: "Fieldset valid on index_2 of CPUID_Fn8000001D_ECX of the AMD architecture"
+        condition: "Fieldset valid on index_2 of CPUID_Fn8000001D_EDX of the AMD architecture"
         size: 32
 
         fields:
@@ -116,11 +116,11 @@
                   "
 
       - name: index_3
-        condition: "Fieldset valid on index_3 of CPUID_Fn8000001D_ECX of the AMD architecture"
+        condition: "Fieldset valid on index_3 of CPUID_Fn8000001D_EDX of the AMD architecture"
         size: 32
 
         fields:
-             - name: WBINVD
+            - name: WBINVD
               long_name: Write-Back Invalidate/Invalidate
               lsb: 0
               msb: 0
@@ -143,7 +143,7 @@
                   "
 
       - name: index_4
-        condition: "Fieldset valid on index_4 of CPUID_Fn8000001D_ECX of the AMD architecture"
+        condition: "Fieldset valid on index_4 of CPUID_Fn8000001D_EDX of the AMD architecture"
         size: 32
 
         fields:
