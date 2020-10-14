@@ -2,6 +2,7 @@ import yaml
 from os import listdir
 from os.path import isfile, join
 import re
+import traceback
 
 cpu_id_dir = "../amd/register/cpuid/"
 cpu_id_files = [f for f in listdir(cpu_id_dir) if isfile(join(cpu_id_dir, f))]
@@ -18,23 +19,35 @@ def check_CPUID_access_mech(contents, fileName):
     name = contents[0]["name"]
     function = contents[0]["access_mechanisms"][0]["function"]
     output = contents[0]["access_mechanisms"][0]["output"]
-    if(function != output):
+
+    name_match_function = name.replace("CPUID_Fn","")
+    name_match_function = re.sub("(_EAX|_EBX|_ECX|_EDX)","", name_match_function)
+    name_match_function = "0x" + name_match_function
+    name_match_function= int(name_match_function, 16)
+
+    if(function != name_match_function):
         print("[ERROR] function is not the same as output", fileName)
         errors = errors + 1
     else:
         match = re.search(Namereg, name)
         group = match.group(0)
 
-        if(group != function.upper()):
-            print("[ERROR] Name does not match function", fileName)
+        if(group != output.upper()):
+            print("[ERROR] Name does not match output", fileName)
+            errors=errors+1
 
 def check_CPUID_purpose(contents, fileName):
     global errors
     name = contents[0]["name"]
     purpose = contents[0]["purpose"]
 
-    match = re.search(purposeReg, purpose)
-    group = match.group(0)
+    try:
+        match = re.search(purposeReg, purpose)
+        group = match.group(0)
+    except:
+        print("[ERROR] Purpose was not formatted correctly: ", fileName)
+        errors = errors + 1
+        return
 
     nameMatch = re.search(purposeReg, name)
     nameGroup = nameMatch.group(0)
@@ -59,14 +72,19 @@ def check_vmcb_access_mech(contents, fileName):
     access_write = contents[0]["access_mechanisms"][1]["offset"]
     if access_write != access_read:
         print("[ERROR] Access Read does not match Access Write: ", fileName)
+        errors=errors+1
 
     name = "0x" + name.replace("h","")
     name = int(name, 16)
 
     if name != access_read:
         print("[ERROR] Name does not match Access Read: ", fileName)
+        errors=errors+1
     if name != access_write:
         print("[ERROR] Name does not match Access Write: ", fileName)
+        errors=errors+1
+
+
 
 # Check CUPID Validity
 for i in cpu_id_files:
@@ -76,8 +94,12 @@ for i in cpu_id_files:
             check_CPUID_access_mech(contents, i)
             check_CPUID_purpose(contents, i)
     except Exception as error:
-        print("[ERROR] Cannot parse YAML File: ", i, "\nError: ", error)
+        print("[ERROR] Cannot Parse file: ", i, "Error: ", error)
         errors=errors+1
+
+cpuid_error = errors
+print("CUPID Errors: ", cpuid_error)
+
 
 # CHeck VMCB
 for i in vmcb_files:
@@ -87,8 +109,10 @@ for i in vmcb_files:
             check_vmcb_purpose(contents, i)
             check_vmcb_access_mech(contents, i)
     except Exception as error:
-        print("[ERROR] Cannot parse YAML File: ", i, "\nError: ", error)
-        errors = errors+1
+        print("[ERROR] Cannot Parse file: ", i, "Error: ", error)
+        errors=errors+1
 
+vmcb_errors = errors - cpuid_error
+print("VMCB Errors: ", vmcb_errors)
 
 print("Total errors: ", errors)
